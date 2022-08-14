@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchUsers } from '../redux'
+// import { fetchUsers } from '../redux'
+import selectUsers from '../redux/users/usersActions'
+import userActions from '../redux/users/usersActions'
 function UserContainer() {
-    const usersMain = useSelector(state => state.usersReducer)
+    const usersMain = useSelector(state => state)
+    // const selectUsersh = useSelector(userActions)
 
+    
+console.log(selectUsersh , "nu")
     const users = useSelector(state => state.usersReducer.users)
     const loading = useSelector(state => state.usersReducer.loading)
     const error = useSelector(state => state.usersReducer.error)
 
     
     useEffect(() => {
-        fetchUsers()
+        // fetchUsers()
         console.log(usersMain, "us")
     }, [])
     console.log(usersMain, "usd")
